@@ -1,0 +1,21 @@
+<H2>Childs Data</H2>
+<table>
+    <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Sender</th>
+          <th scope="col">Receiver</th>
+          <th scope="col">Total Amount</th>
+          <th scope="col">Paid Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let child of childs">
+        <td>{{child.id}}</td>
+        <td>{{child.sender}}</td>
+        <td>{{child.receiver}}</td>
+        <td>{{child.totalAmount}}</td>
+        <td>{{child.paidAmount}}</td>
+      </tr>
+    </tbody>
+</table>

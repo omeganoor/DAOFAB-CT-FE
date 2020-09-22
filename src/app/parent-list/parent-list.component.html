@@ -1,0 +1,25 @@
+<H2>Parent Data</H2>
+<table>
+    <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Sender</th>
+          <th scope="col">Receiver</th>
+          <th scope="col">Total Amount</th>
+          <th scope="col">Total Paid Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let parent of parents">
+        <td>{{parent.id}}</td>
+        <td>{{parent.sender}}</td>
+        <td>{{parent.receiver}}</td>
+        <td>{{parent.totalAmount}}</td>
+        <td>
+            <a [routerLink]="['/childs', parent.id]">
+                {{parent.totalPaidAmount}}
+            </a>
+        </td>
+      </tr>
+    </tbody>
+</table>
