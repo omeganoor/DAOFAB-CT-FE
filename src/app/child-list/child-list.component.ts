@@ -12,12 +12,6 @@ export class ChildListComponent implements OnInit {
   childs : any;
   id = 0;
   totalSize = 0;
-  // childs: any = [
-  //   {id: 1, sender: 'Mark', receiver: 'Otto', totalAmount: 100, paidAmount: 50},
-  //   {id: 2, sender: 'Jacob', receiver: 'Thornton', totalAmount: 200, paidAmount: 150},
-  //   {id: 3, sender: 'Larry', receiver: 'the Bird', totalAmount: 50, paidAmount: 10},
-  //   {id: 4, sender: 'Larry', receiver: 'the Bird', totalAmount: 50, paidAmount: 10},
-  // ];
   constructor(
     private route: ActivatedRoute,
     private childService : ChildListService

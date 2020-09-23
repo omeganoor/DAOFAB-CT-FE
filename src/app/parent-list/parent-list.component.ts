@@ -9,20 +9,6 @@ import { ParentListService } from 'src/app/parent-list/parent-list.service';
 })
 export class ParentListComponent implements OnInit {
 
-  parents=[
-    {id: 1, sender: 'Mark', receiver: 'Otto', totalAmount: 100, totalPaidAmount: 50},
-    {id: 2, sender: 'Jacob', receiver: 'Thornton', totalAmount: 200, totalPaidAmount: 150},
-    {id: 3, sender: 'Larry', receiver: 'the Bird', totalAmount: 50, totalPaidAmount: 10},
-    {id: 4, sender: 'Larry', receiver: 'the Bird', totalAmount: 50, totalPaidAmount: 10},
-    {id: 5, sender: 'Mark', receiver: 'Otto', totalAmount: 100, totalPaidAmount: 50},
-    {id: 6, sender: 'Jacob', receiver: 'Thornton', totalAmount: 200, totalPaidAmount: 150},
-    {id: 7, sender: 'Larry', receiver: 'the Bird', totalAmount: 50, totalPaidAmount: 10},
-    {id: 8, sender: 'Larry', receiver: 'the Bird', totalAmount: 50, totalPaidAmount: 10},
-    {id: 9, sender: 'Mark', receiver: 'Otto', totalAmount: 100, totalPaidAmount: 50},
-    {id: 10, sender: 'Jacob', receiver: 'Thornton', totalAmount: 200, totalPaidAmount: 150},
-    {id: 11, sender: 'Mark', receiver: 'Otto', totalAmount: 100, totalPaidAmount: 50},
-    {id: 12, sender: 'Jacob', receiver: 'Thornton', totalAmount: 200, totalPaidAmount: 150}
-  ];
   offset = 0;
   size = 2;
   lastOffset = this.size;
@@ -116,9 +102,9 @@ export class ParentListComponent implements OnInit {
   onShort($event){   
     console.log("short button is clicked!", $event);  
     if(this.ascDir){
-      this.parents.sort(function(a, b){return a.id - b.id});
+      this.parentList.sort(function(a, b){return a.id - b.id});
     }else{
-      this.parents.sort(function(a, b){return b.id - a.id});
+      this.parentList.sort(function(a, b){return b.id - a.id});
     }
     this.ascDir = !this.ascDir;
     this.parentData.splice(0, this.size);
