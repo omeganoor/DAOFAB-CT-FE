@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+import { ParentListService } from 'src/app/parent-list/parent-list.service';
 
 @Component({
   selector: 'app-parent-list',
@@ -26,22 +26,47 @@ export class ParentListComponent implements OnInit {
   offset = 0;
   size = 2;
   lastOffset = this.size;
-  totalSize = this.parents.length;
   parentData = [];
   ascDir = false;
+  parentList: any;
+  totalSize = 0;
 
 
   constructor(
     private route: ActivatedRoute,
+    private parentService: ParentListService
   ) { }
 
   ngOnInit(): void {
+    this.retrieveTutorials()
+  }
+
+  setData(){
     var len = Number(this.totalSize) - Number(this.offset) < this.size ? 
     Number(this.totalSize) - Number(this.offset): this.size;
     for (let i = 0; i < len; i++) {
-      this.parentData[i] = this.parents[i+this.offset];
+      this.parentData[i] = this.parentList[i+this.offset];
     }    
     console.log(this.parentData)
+  }
+
+  retrieveTutorials() {
+    const params = {};
+
+    this.parentService.getAll(params)
+      .subscribe(
+        response => {
+          const { content, totalElements } = response;
+          this.parentList = content;
+          this.totalSize = totalElements;
+          console.log("response :",response)
+          console.log(this.parentList)
+          console.log(this.totalSize)
+          this.setData()
+        },
+        error => {
+          console.log(error);
+        });
   }
 
   handlePageSizeChange(event) {
@@ -50,7 +75,7 @@ export class ParentListComponent implements OnInit {
     this.parentData.splice(0, this.size);
     this.offset = 0;
     this.lastOffset = this.size;
-    this.ngOnInit()
+    this.setData()
   }
 
   onNext($event){    
@@ -61,7 +86,7 @@ export class ParentListComponent implements OnInit {
     this.lastOffset = lastOffset > this.totalSize ? this.totalSize : lastOffset;
     this.offset = offset;
     console.log(offset, this.offset, lastOffset, this.lastOffset, this.size)
-    this.ngOnInit()
+    this.setData()
   }
 
   onPrev($event){    
@@ -69,7 +94,7 @@ export class ParentListComponent implements OnInit {
     this.offset = Number(this.offset) - Number(this.size) < 0 ? 0 : Number(this.offset) - Number(this.size);
     this.lastOffset = Number(this.lastOffset) - Number(this.size) < Number(this.size)? Number(this.size) : Number(this.lastOffset) - Number(this.size);
     this.parentData.splice(0, this.size);
-    this.ngOnInit()
+    this.setData()
   }
 
   onFirst($event){   
@@ -77,7 +102,7 @@ export class ParentListComponent implements OnInit {
     this.offset = 0;
     this.lastOffset = this.size;
     this.parentData.splice(0, this.size);
-    this.ngOnInit()
+    this.setData()
   }
 
   onLast($event){    
@@ -85,7 +110,7 @@ export class ParentListComponent implements OnInit {
     this.offset = this.totalSize - this.size;
     this.lastOffset = this.totalSize;
     this.parentData.splice(0, this.size);
-    this.ngOnInit()   
+    this.setData()
   }
 
   onShort($event){   
@@ -97,6 +122,6 @@ export class ParentListComponent implements OnInit {
     }
     this.ascDir = !this.ascDir;
     this.parentData.splice(0, this.size);
-    this.ngOnInit()   
+    this.setData()
   }
 }

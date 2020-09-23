@@ -28,7 +28,7 @@ h2{
 }
 
 table {
-  border: 0px solid grey;
+  border: 0.5px solid #dee2e6;
   border-collapse: collapse;
   padding: 5px;
   width: 100%;
@@ -50,6 +50,9 @@ td {
   color: #3C3C3C;
 }
 
+tfoot{
+  border: 0.5px solid #dee2e6;
+}
 table th {
   background-color: #b2b2b2;
 }
