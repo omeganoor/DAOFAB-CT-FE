@@ -1,38 +1,144 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  border-radius: 5px;
+  color: #444;
+  margin: 5px auto;
+  margin-top: -1px;
+  height: 60px;
+  margin-bottom: -10px;
+}
+
+.parent {
+  background-color: hsla(0,0%,94.5%,.2);
+  border: .5px solid #dbdbdb;
+  border-radius: 5px;
+  color: #444;
+  margin: 16px auto;
+}
+
+h2{
+  text-align: center;
+  font-size: 35px;
+  color: white;
+  background-color:#444444;
+}
 
 table {
-    border: 0px solid grey;
-    border-collapse: collapse;
-    padding: 5px;
-    width: 100%;
-  }
-  
-  th {
-    border: 0px solid grey;
-    border-collapse: collapse;
-    padding: 5px;
-    text-align: center;
-  }
+  border: 0px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+  width: 100%;
+}
 
-  td {
-    border: 0px solid grey;
-    border-collapse: collapse;
-    padding: 5px;
-    text-align: center;
-  }
+th {
+  border: 0px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+  text-align: center;
+}
 
-  table th {
-    background-color: #b2b2b2;
-  }
-  
-  table tr:nth-child(even) {
-    background-color: #ececec;
-  }
-  
-  table tr:nth-child(odd) {
-    background-color: #ffffff;
-  }
-  /*
-  Copyright Google LLC. All Rights Reserved.
-  Use of this source code is governed by an MIT-style license that
-  can be found in the LICENSE file at http://angular.io/license
-  */
+td {
+  border: 0px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+  text-align: center;
+  font-size: 16px;
+  color: #3C3C3C;
+}
+
+table th {
+  background-color: #b2b2b2;
+}
+
+table tr:nth-child(even) {
+  background-color: #ececec;
+}
+
+table tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.grey.lighten-5 {
+  background-color: #fafafa !important;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+.pagination {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: .25rem;
+  display: inline-block;
+}
+
+.page {
+  display: inline-block;
+}
+
+.page button {
+  color: black;
+  float: left;
+  padding: 5px 10px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  letter-spacing: -3px;
+}
+
+.page button.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.page button:hover:not(.active) {background-color: #ddd;}
+
+.page button:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.page button:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.btn1 {
+  border-radius: 4px;
+	background-color: #b2b2b2;
+	font-size: 16px;
+	border: 0px solid grey;
+	border-collapse: collapse;
+	text-align: center;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-weight: 600;
+  color: #444444;
+  width: 100%;
+  padding: 5px;
+}
+
+.btn1:hover {
+  background: rgba(255, 255, 255, 0.76);
+}
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/

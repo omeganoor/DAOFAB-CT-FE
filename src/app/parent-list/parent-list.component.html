@@ -1,25 +1,68 @@
-<H2>Parent Data</H2>
-<table>
-    <thead>
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Sender</th>
-          <th scope="col">Receiver</th>
-          <th scope="col">Total Amount</th>
-          <th scope="col">Total Paid Amount</th>
+<div class="parent">
+  <H2>Parent Data</H2>
+  <table>
+      <thead>
+          <tr>
+            <th scope="col">
+              <button class="btn1" (click)="onShort($event)">
+                ID
+              </button>
+            </th>
+            <th scope="col">Sender</th>
+            <th scope="col">Receiver</th>
+            <th scope="col">Total Amount</th>
+            <th scope="col">Total Paid Amount</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let parent of parentData">
+          <td>{{parent.id}}</td>
+          <td>{{parent.sender}}</td>
+          <td>{{parent.receiver}}</td>
+          <td>{{parent.totalAmount}}</td>
+          <td>
+              <a [routerLink]="['/childs', parent.id]">
+                  {{parent.totalPaidAmount}}
+              </a>
+          </td>
         </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let parent of parents">
-        <td>{{parent.id}}</td>
-        <td>{{parent.sender}}</td>
-        <td>{{parent.receiver}}</td>
-        <td>{{parent.totalAmount}}</td>
-        <td>
-            <a [routerLink]="['/childs', parent.id]">
-                {{parent.totalPaidAmount}}
-            </a>
-        </td>
-      </tr>
-    </tbody>
-</table>
+      </tbody>
+      <tfoot _ngcontent-serverapp-c153="" class="grey lighten-5 w-100">
+        <tr _ngcontent-serverapp-c153="">
+          <td _ngcontent-serverapp-c153="" colspan="10">
+              <nav>
+                <ul class="pagination pagination-circle pg-blue d-flex flex-center">
+                  <div class="page" style="margin-right: 10px;"> {{offset}} - {{lastOffset}} of {{totalSize}} </div>
+                  <div class="page">
+                    <button [disabled]="offset == 0" (click)="onFirst($event)"><<</button>
+                    <button [disabled]="offset == 0" (click)="onPrev($event)"><</button>
+                    <button [disabled]="lastOffset == totalSize" (click)="onNext($event)">></button>
+                    <button [disabled]="lastOffset == totalSize" (click)="onLast($event)">>></button>
+                  </div>
+                  <div class="page" style="align-items: center;padding: 24px;margin: 0 -16px;">
+                    Items per Page :
+                      <select (change)="handlePageSizeChange($event)" style="border-radius: 4px;">
+                        <!-- <option *ngfor="let pSize of pageSizes">
+                          {{ pSize }}
+                        </option> -->
+                        <option value="2">
+                          2
+                        </option>
+                        <option value="5">
+                          5
+                        </option>
+                        <option value="10">
+                          10
+                        </option>
+                        <option value="50">
+                          50
+                        </option>
+                      </select>
+                    </div>
+                </ul>
+              </nav>
+          </td>
+        </tr>
+      </tfoot>
+  </table>
+</div>

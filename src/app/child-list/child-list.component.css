@@ -1,38 +1,67 @@
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  border-radius: 5px;
+  color: #444;
+  margin: 5px auto;
+  margin-top: -1px;
+  height: 60px;
+  margin-bottom: -10px;
+}
+
+.parent {
+  background-color: hsla(0,0%,94.5%,.2);
+  border: .5px solid #dbdbdb;
+  border-radius: 5px;
+  color: #444;
+  margin: 16px auto;
+}
+
+h2{
+  text-align: center;
+  font-size: 35px;
+  color: white;
+  background-color:#444444;
+}
+
 table {
-    border: 0px solid grey;
-    border-collapse: collapse;
-    padding: 5px;
-    width: 100%;
-  }
-  
-  th {
-    border: 0px solid grey;
-    border-collapse: collapse;
-    padding: 5px;
-    text-align: center;
-  }
+  border: 0px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+  width: 100%;
+}
 
-  td {
-    border: 0px solid grey;
-    border-collapse: collapse;
-    padding: 5px;
-    text-align: center;
-  }
+th {
+  border: 0px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+  text-align: center;
+}
 
-  table th {
-    background-color: #b2b2b2;
-  }
-  
-  table tr:nth-child(even) {
-    background-color: #ececec;
-  }
-  
-  table tr:nth-child(odd) {
-    background-color: #ffffff;
-  }
-  /*
-  Copyright Google LLC. All Rights Reserved.
-  Use of this source code is governed by an MIT-style license that
-  can be found in the LICENSE file at http://angular.io/license
-  */
+td {
+  border: 0px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+  text-align: center;
+}
+
+table th {
+  background-color: #b2b2b2;
+}
+
+table tr:nth-child(even) {
+  background-color: #ececec;
+}
+
+table tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
